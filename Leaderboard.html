@@ -1,28 +1,76 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Batminton League</title>
-        <link rel="icon" href="./img/download.jpg">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <center>
-            <h1>Batmintan League🏸</h1>
-                    
-        <a href="file:///C:/Users/yoges/OneDrive/Desktop/badminton%20league/index.html" id="about1">Player Management |</a>
-        <a href="file:///C:/Users/yoges/OneDrive/Desktop/badminton%20league/tracking.html" id="about2">Match Tracking | </a>
-         <a href="file:///C:/Users/yoges/OneDrive/Desktop/badminton%20league/Leaderboard.html" id="about3"> Leaderboard / Stats</a>
-            <hr>
-            <h2>Leaderboard / Stats</h2>
-            <form action="">
-                <table>
-                     <tr>
-                        <td>The Number of Wins</td><td><input type="number"></td>
-                         <td>The Number of Losses</td><td><input type="number"></td>
 
-                     </tr>
-                </table>
-            </form>
-        </center>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Badminton League</title>
+    <link rel="icon" href="./img/download.jpg">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Badminton League 🏸</h1>
+
+    <nav>
+        <a href="index.html" id="about1">Player Management |</a>
+        <a href="tracking.html" id="about2">Match Tracking |</a>
+        <a href="Leaderboard.html" id="about3">Leaderboard / Stats</a>
+    </nav>
+
+    <hr>
+
+    <h2>Leaderboard / Stats</h2>
+
+    <form id="statsForm" onsubmit="calculatePercentages(event)">
+        <table>
+            <tr>
+                <td><label for="wins">Number of Wins:</label></td>
+                <td><input type="number" id="wins" name="wins" min="0" required></td>
+            </tr>
+            <tr>
+                <td><label for="losses">Number of Losses:</label></td>
+                <td><input type="number" id="losses" name="losses" min="0" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Calculate Percentages">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculatePercentages(event) {
+            event.preventDefault(); 
+
+            const wins = parseInt(document.getElementById("wins").value);
+            const losses = parseInt(document.getElementById("losses").value);
+            const total = wins + losses;
+
+            let winPercentage = 0;
+            let lossPercentage = 0;
+
+            if (total > 0) {
+                winPercentage = (wins / total * 100).toFixed(2);
+                lossPercentage = (losses / total * 100).toFixed(2);
+            }
+
+            document.getElementById("result").innerHTML = `
+                Win Percentage: ${winPercentage}%<br>
+                Loss Percentage: ${lossPercentage}%
+            `;
+        }
+    </script>
+</body>
 </html>

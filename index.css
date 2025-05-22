@@ -1,6 +1,66 @@
-h1{
-    color: rebeccapurple;
-    background-color: bisque;
-    border: 20px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-        
+
+body {
+  font-family: 'Segoe UI', Tahoma;
+  background-color: #f4f7fa;
+  color: #333;
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+  color: #0077b6;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #023e8a;
+}
+
+
+table {
+  margin: 0 auto;
+}
+
+
+button {
+  background-color: #00b4d8;
+  color: white;
+  padding: 10px 20px;
+ 
+}
+
+button:hover {
+  background-color: #0077b6;
+}
+
+
+      img{
+    height: 400px;
+    width: 800px;
+
+}
+form{
+    padding: 20px;
+}
+.submit{
+    padding: 20px;
+}
