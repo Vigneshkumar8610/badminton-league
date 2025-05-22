@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
+<head>
+    <title>Badminton League</title>
+    <link rel="icon" href="./img/download.jpg">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <center>
+        <h1>Badminton League 🏸</h1>
 
-        </title>
-    </head>
-    <body>
+          <a href="./index.html" id="about1">Player Management |</a>
+         <a href="./tracking.html" id="about2">Match Tracking |</a>
+         <a href="./Leaderboard.html" id="about3">Leaderboard / Stats</a>
         
-    </body>
+        <hr>
+        <h2>Player Management</h2>
+
+        <form onsubmit="playerdata(); return false;">
+            <table>
+                  <tr>
+                    <td>Player Name:</td>
+                    <td><input id="pname" placeholder="Enter the name" maxlength="25" required></td>
+                 </tr>
+                <tr>
+                    <td>Player Number:</td>
+                    <td><input type="number" id="pnumber" placeholder="Enter player number" min="1" max="999" required></td>
+                </tr>
+                <tr>
+                <td colspan="2"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+          </form>
+          </center>
+        <ul id="num1">
+        
+        </ul>
+
+    <script>
+        function playerdata() {
+      
+            var name = document.getElementById("pname").value;
+            var number = document.getElementById("pnumber").value;
+
+      
+            var li = document.createElement("li");
+            li.textContent = "Player Name: " + name + " | Player Number: "+ number;
+
+        
+            document.getElementById("num1").appendChild(li);
+
+          
+            document.getElementById("pname").value = "";
+            document.getElementById("pnumber").value = "";
+        }
+    </script>
+</body>
 </html>
